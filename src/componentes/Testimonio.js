@@ -2,6 +2,8 @@ import React from 'react';
 import '../stylesheets/Testimonio.css'
 
 function Testimonio (props){
+  const testimonioConNegrita = props.testimonio.split(props.negrita);
+  
   return(
     <div className='contenedor-testimonio'>
       <img className='imagen-testimonio'
@@ -15,7 +17,9 @@ function Testimonio (props){
           {props.cargo} en <strong>{props.empresa}</strong>
         </p>
         <p className='textyo-testimonio'>
-          "{props.testimonio}"
+          {testimonioConNegrita[0]}
+            <strong> {props.negrita}</strong>
+          {testimonioConNegrita[1]}
         </p>
 
       </div>
